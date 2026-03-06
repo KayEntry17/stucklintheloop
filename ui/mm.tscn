@@ -1,0 +1,470 @@
+[gd_scene load_steps=44 format=3 uid="uid://cvov8f8v2qifo"]
+
+[ext_resource type="Script" uid="uid://dppejhwhonvjw" path="res://MainMenu.gd" id="1_guud0"]
+[ext_resource type="Texture2D" uid="uid://bln5uhliqome" path="res://ui/Background.png" id="2_65w35"]
+[ext_resource type="AudioStream" uid="uid://su0w7vuomqgn" path="res://Audio/ttost/analgesic/mp3/overworld.mp3" id="2_dr2ru"]
+[ext_resource type="PackedScene" uid="uid://cmaw18nptx8lr" path="res://numberd.tscn" id="2_gkcuo"]
+[ext_resource type="Shader" uid="uid://d4y5ll00egu5" path="res://ui/bg.gdshader" id="2_t8pm7"]
+[ext_resource type="PackedScene" uid="uid://0shyi31hb2a3" path="res://levels/boxl2.tscn" id="3_tjbc0"]
+[ext_resource type="PackedScene" uid="uid://dsxerr4oys8ln" path="res://credits.tscn" id="3_y1ok7"]
+[ext_resource type="PackedScene" uid="uid://cx4exrjcckfgy" path="res://levels/boxl4.tscn" id="4_hpilw"]
+[ext_resource type="Texture2D" uid="uid://4oxaunp3rt6q" path="res://ui/Ingame_Logo.png" id="4_x8ceh"]
+[ext_resource type="PackedScene" uid="uid://v1nvwq87b56a" path="res://levels/boxl5.tscn" id="5_vt4wk"]
+[ext_resource type="Texture2D" uid="uid://dhtpv4xqtgeqs" path="res://ui/Menu_Button_NO_Gold.png" id="5_wvv08"]
+[ext_resource type="Texture2D" uid="uid://bdfuh70uy8ogq" path="res://ui/Menu_Button_Gold.png" id="6_v8gvc"]
+[ext_resource type="PackedScene" uid="uid://djn2smmnf1c5d" path="res://levels/boxl3.tscn" id="6_vt4wk"]
+[ext_resource type="Shader" uid="uid://w71q8kuntc28" path="res://ui/mm.gdshader" id="7_22cti"]
+[ext_resource type="PackedScene" uid="uid://cxfm4s5ysv1qt" path="res://levels/boxl6.tscn" id="7_hyep2"]
+[ext_resource type="Script" uid="uid://7vp5x30jsjm2" path="res://ui/button.gd" id="7_j4bia"]
+[ext_resource type="Texture2D" uid="uid://bcwf4uyjr7bfc" path="res://ui/Mobius_trefoil_menu-sheet.png" id="7_yc8wt"]
+[ext_resource type="Texture2D" uid="uid://dpwpkvhu2s7ox" path="res://ui/BN_New_Game.png" id="8_5px2s"]
+[ext_resource type="PackedScene" uid="uid://bq5cuejd2o1ha" path="res://ui/piece_1.tscn" id="8_45rv8"]
+[ext_resource type="Texture2D" uid="uid://du7sews3pblm5" path="res://ui/BN_Options.png" id="9_kglod"]
+[ext_resource type="Texture2D" uid="uid://dfnnsx4k0egow" path="res://ui/Piece_2.png" id="9_tm3ph"]
+[ext_resource type="Texture2D" uid="uid://c14fyyy3adroe" path="res://ui/Piece_3.png" id="10_20qfi"]
+[ext_resource type="Texture2D" uid="uid://dt8ulpqk6w15t" path="res://ui/BN_Exit.png" id="10_cb4x5"]
+[ext_resource type="Texture2D" uid="uid://cgo2uybmlmrwu" path="res://ui/Piece_4.png" id="11_c1un6"]
+[ext_resource type="Texture2D" uid="uid://cjob5cy8p6jav" path="res://ui/BN_SFX.png" id="11_cb4x5"]
+[ext_resource type="Texture2D" uid="uid://clyei2wdq2akc" path="res://ui/BN_Music.png" id="12_0qc57"]
+[ext_resource type="Texture2D" uid="uid://cyhjvhjfhxlxq" path="res://ui/BN_General.png" id="13_2hpr6"]
+[ext_resource type="Texture2D" uid="uid://gqljuf8blw7e" path="res://ui/BN_Save.png" id="14_dr2ru"]
+[ext_resource type="Script" uid="uid://c8brnw2uj1q5h" path="res://ui/audio.gd" id="17_dr2ru"]
+[ext_resource type="Texture2D" uid="uid://cjq67n20ak762" path="res://ui/BN_Level.png" id="17_wg8ax"]
+[ext_resource type="Script" uid="uid://bf51c7teuop3y" path="res://ui/bn_level.gd" id="18_ox14l"]
+[ext_resource type="Texture2D" uid="uid://drpbgstlqu1hx" path="res://ui/BN_Credits.png" id="19_ljo1w"]
+[ext_resource type="PackedScene" uid="uid://cmaw18nptx8lr" path="res://numberd.tscn" id="20_tjbc0"]
+[ext_resource type="Texture2D" uid="uid://berld6od64j80" path="res://ui/Selection Arrow.png" id="21_ox14l"]
+[ext_resource type="PackedScene" uid="uid://dvbvw4h6ntjb4" path="res://ui/muscont.tscn" id="22_gkcuo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8gvc"]
+shader = ExtResource("2_t8pm7")
+shader_parameter/speed = 0.035
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_22cti"]
+shader = ExtResource("7_22cti")
+shader_parameter/colorList = PackedColorArray(0.615686, 0.427451, 0.0941176, 1, 0.811765, 0.666667, 0.415686, 1, 0, 0, 0, 1, 0.772549, 0.576471, 0.235294, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_22cti"]
+viewport_path = NodePath("TextureRect/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4qdo"]
+shader = ExtResource("7_22cti")
+shader_parameter/colorList = PackedColorArray(0.133333, 0.65098, 0.298039, 1, 0.203922, 1, 0.454902, 1, 0, 0, 0, 1, 0.0627451, 0.4, 0.168627, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p4qdo"]
+viewport_path = NodePath("TextureRect2/SubViewport")
+
+[sub_resource type="Animation" id="Animation_22cti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(442, 170)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_43bks"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.48, 1.04, 1.49),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(442, 170), Vector2(422, 153), Vector2(456, 154), Vector2(425, 182)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.48, 1.04, 1.49),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0610865, -0.0401426, 0.0523599]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p4qdo"]
+_data = {
+&"RESET": SubResource("Animation_22cti"),
+&"new_animation": SubResource("Animation_43bks")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_guud0")
+levels = Array[PackedScene]([ExtResource("2_gkcuo"), ExtResource("3_tjbc0"), ExtResource("4_hpilw"), ExtResource("5_vt4wk"), ExtResource("6_vt4wk"), ExtResource("7_hyep2")])
+credits = ExtResource("3_y1ok7")
+mmtheme = ExtResource("2_dr2ru")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_v8gvc")
+position = Vector2(320, 180)
+texture = ExtResource("2_65w35")
+region_rect = Rect2(0, 0, 818, 360)
+
+[node name="IngameLogo" type="Sprite2D" parent="."]
+position = Vector2(114, 104)
+texture = ExtResource("4_x8ceh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_22cti")
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = SubResource("ViewportTexture_22cti")
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect"]
+transparent_bg = true
+size = Vector2i(640, 360)
+
+[node name="Node2D" type="Node2D" parent="TextureRect/SubViewport"]
+
+[node name="Piece1" parent="TextureRect/SubViewport/Node2D" instance=ExtResource("8_45rv8")]
+
+[node name="Node2D2" type="Node2D" parent="TextureRect/SubViewport"]
+position = Vector2(244.545, 115)
+rotation = -0.535816
+
+[node name="Piece1" parent="TextureRect/SubViewport/Node2D2" instance=ExtResource("8_45rv8")]
+texture = ExtResource("11_c1un6")
+
+[node name="Node2D3" type="Node2D" parent="TextureRect/SubViewport"]
+position = Vector2(27.185, 108.405)
+
+[node name="Piece1" parent="TextureRect/SubViewport/Node2D3" instance=ExtResource("8_45rv8")]
+texture = ExtResource("10_20qfi")
+
+[node name="Node2D4" type="Node2D" parent="TextureRect/SubViewport"]
+position = Vector2(244.545, 115)
+rotation = 0.164061
+
+[node name="Piece1" parent="TextureRect/SubViewport/Node2D4" instance=ExtResource("8_45rv8")]
+texture = ExtResource("9_tm3ph")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_p4qdo")
+layout_mode = 0
+offset_top = -1.0
+offset_right = 640.0
+offset_bottom = 359.0
+texture = SubResource("ViewportTexture_p4qdo")
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect2"]
+transparent_bg = true
+size = Vector2i(640, 360)
+
+[node name="MobiusTrefoilMenu-sheet" type="Sprite2D" parent="TextureRect2/SubViewport"]
+position = Vector2(442, 170)
+texture = ExtResource("7_yc8wt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect2/SubViewport/MobiusTrefoilMenu-sheet"]
+libraries = {
+&"": SubResource("AnimationLibrary_p4qdo")
+}
+autoplay = "new_animation"
+speed_scale = 0.2
+
+[node name="nosaves" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = -42.0
+offset_right = 48.0
+offset_bottom = -2.0
+
+[node name="New Game" type="TextureButton" parent="nosaves"]
+layout_mode = 2
+offset_left = -69.0
+offset_top = 249.0
+offset_right = 201.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Options")
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Exit")
+texture_normal = ExtResource("5_wvv08")
+texture_hover = ExtResource("6_v8gvc")
+texture_focused = ExtResource("6_v8gvc")
+script = ExtResource("7_j4bia")
+destination = Vector2(20, 0)
+
+[node name="BnNewGame" type="Sprite2D" parent="nosaves/New Game"]
+visible = false
+position = Vector2(127, 14)
+texture = ExtResource("8_5px2s")
+
+[node name="Node2D" parent="nosaves/New Game" instance=ExtResource("20_tjbc0")]
+position = Vector2(175, 15)
+
+[node name="SelectionArrow" type="Sprite2D" parent="nosaves/New Game/Node2D"]
+position = Vector2(-14, 1)
+texture = ExtResource("21_ox14l")
+
+[node name="SelectionArrow2" type="Sprite2D" parent="nosaves/New Game/Node2D"]
+position = Vector2(14, 0)
+scale = Vector2(-1, -1)
+texture = ExtResource("21_ox14l")
+
+[node name="BnLevel" type="Sprite2D" parent="nosaves/New Game/Node2D"]
+position = Vector2(-72, -2)
+texture = ExtResource("17_wg8ax")
+script = ExtResource("18_ox14l")
+
+[node name="Options" type="TextureButton" parent="nosaves"]
+layout_mode = 2
+offset_left = -69.0
+offset_top = 287.0
+offset_right = 201.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../New Game")
+focus_neighbor_top = NodePath("../New Game")
+focus_neighbor_right = NodePath("../Credits")
+focus_neighbor_bottom = NodePath("../Credits")
+focus_next = NodePath("../Credits")
+focus_previous = NodePath("../New Game")
+texture_normal = ExtResource("5_wvv08")
+texture_hover = ExtResource("6_v8gvc")
+texture_focused = ExtResource("6_v8gvc")
+script = ExtResource("7_j4bia")
+destination = Vector2(20, 0)
+
+[node name="BnOptions" type="Sprite2D" parent="nosaves/Options"]
+position = Vector2(118, 14)
+texture = ExtResource("9_kglod")
+
+[node name="Exit" type="TextureButton" parent="nosaves"]
+layout_mode = 2
+offset_left = -69.0
+offset_top = 364.0
+offset_right = 201.0
+offset_bottom = 398.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Credits")
+focus_neighbor_top = NodePath("../Credits")
+focus_neighbor_right = NodePath("../New Game")
+focus_neighbor_bottom = NodePath("../New Game")
+focus_next = NodePath("../New Game")
+focus_previous = NodePath("../Credits")
+texture_normal = ExtResource("5_wvv08")
+texture_hover = ExtResource("6_v8gvc")
+texture_focused = ExtResource("6_v8gvc")
+script = ExtResource("7_j4bia")
+destination = Vector2(20, 0)
+
+[node name="BnExit" type="Sprite2D" parent="nosaves/Exit"]
+position = Vector2(118, 16)
+texture = ExtResource("10_cb4x5")
+
+[node name="Credits" type="TextureButton" parent="nosaves"]
+layout_mode = 2
+offset_left = -69.0
+offset_top = 325.0
+offset_right = 201.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Options")
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_right = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Options")
+texture_normal = ExtResource("5_wvv08")
+texture_hover = ExtResource("6_v8gvc")
+texture_focused = ExtResource("6_v8gvc")
+script = ExtResource("7_j4bia")
+destination = Vector2(20, 0)
+
+[node name="BnCredits" type="Sprite2D" parent="nosaves/Credits"]
+position = Vector2(114, 16)
+texture = ExtResource("19_ljo1w")
+
+[node name="audio" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 688.0
+offset_right = 688.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_dr2ru")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_top = 31.0
+offset_right = 557.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+texture = ExtResource("6_v8gvc")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 9
+patch_margin_bottom = 13
+
+[node name="BnOptions" type="Sprite2D" parent="audio"]
+position = Vector2(364, 59)
+texture = ExtResource("9_kglod")
+
+[node name="BnSfx" type="Sprite2D" parent="audio"]
+position = Vector2(148, 226)
+texture = ExtResource("11_cb4x5")
+
+[node name="BnMusic" type="Sprite2D" parent="audio"]
+position = Vector2(148, 173)
+texture = ExtResource("12_0qc57")
+
+[node name="BnGeneral" type="Sprite2D" parent="audio"]
+position = Vector2(148, 121)
+texture = ExtResource("13_2hpr6")
+
+[node name="General" parent="audio" instance=ExtResource("22_gkcuo")]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 120.0
+offset_right = 556.0
+offset_bottom = 137.0
+focus_neighbor_left = NodePath("../TextureButton2")
+focus_neighbor_top = NodePath("../TextureButton2")
+focus_neighbor_right = NodePath("../General3")
+focus_neighbor_bottom = NodePath("../General3")
+focus_next = NodePath("../General3")
+focus_previous = NodePath("../TextureButton2")
+bus_name = "Master"
+
+[node name="General2" parent="audio" instance=ExtResource("22_gkcuo")]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 225.0
+offset_right = 557.0
+offset_bottom = 242.0
+focus_neighbor_left = NodePath("../General3")
+focus_neighbor_top = NodePath("../General3")
+focus_neighbor_right = NodePath("../TextureButton")
+focus_neighbor_bottom = NodePath("../TextureButton")
+focus_next = NodePath("../TextureButton")
+focus_previous = NodePath("../General3")
+bus_name = "SFX"
+
+[node name="General3" parent="audio" instance=ExtResource("22_gkcuo")]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 168.0
+offset_right = 557.0
+offset_bottom = 185.0
+focus_neighbor_left = NodePath("../General")
+focus_neighbor_top = NodePath("../General")
+focus_neighbor_right = NodePath("../General2")
+focus_neighbor_bottom = NodePath("../General2")
+focus_next = NodePath("../General2")
+focus_previous = NodePath("../General")
+bus_name = "Music"
+
+[node name="TextureButton" type="TextureButton" parent="audio"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 293.0
+offset_right = 360.0
+offset_bottom = 327.0
+focus_neighbor_left = NodePath("../General2")
+focus_neighbor_top = NodePath("../General2")
+focus_neighbor_right = NodePath("../TextureButton2")
+focus_neighbor_bottom = NodePath("../TextureButton2")
+focus_next = NodePath("../TextureButton2")
+focus_previous = NodePath("../General2")
+texture_normal = ExtResource("5_wvv08")
+texture_hover = ExtResource("6_v8gvc")
+texture_focused = ExtResource("6_v8gvc")
+
+[node name="BnSave" type="Sprite2D" parent="audio/TextureButton"]
+position = Vector2(129, 15)
+texture = ExtResource("14_dr2ru")
+
+[node name="TextureButton2" type="TextureButton" parent="audio"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 293.0
+offset_right = 629.0
+offset_bottom = 327.0
+focus_neighbor_left = NodePath("../TextureButton")
+focus_neighbor_top = NodePath("../TextureButton")
+focus_neighbor_right = NodePath("../General")
+focus_neighbor_bottom = NodePath("../General")
+texture_normal = ExtResource("5_wvv08")
+texture_hover = ExtResource("6_v8gvc")
+texture_focused = ExtResource("6_v8gvc")
+
+[node name="BnExit" type="Sprite2D" parent="audio/TextureButton2"]
+position = Vector2(136, 18)
+texture = ExtResource("10_cb4x5")
+region_enabled = true
+region_rect = Rect2(0, 0, 131, 23)
+
+[connection signal="focus_entered" from="nosaves/New Game" to="nosaves/New Game" method="_on_focus_entered"]
+[connection signal="focus_exited" from="nosaves/New Game" to="nosaves/New Game" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="nosaves/New Game" to="nosaves/New Game" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="nosaves/New Game" to="nosaves/New Game" method="_on_mouse_exited"]
+[connection signal="pressed" from="nosaves/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="nosaves/New Game" to="nosaves/New Game/Node2D/BnLevel" method="_on_new_game_pressed"]
+[connection signal="focus_entered" from="nosaves/Options" to="nosaves/Options" method="_on_focus_entered"]
+[connection signal="focus_exited" from="nosaves/Options" to="nosaves/Options" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="nosaves/Options" to="nosaves/Options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="nosaves/Options" to="nosaves/Options" method="_on_mouse_exited"]
+[connection signal="pressed" from="nosaves/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="nosaves/Exit" to="nosaves/Exit" method="_on_focus_entered"]
+[connection signal="focus_exited" from="nosaves/Exit" to="nosaves/Exit" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="nosaves/Exit" to="nosaves/Exit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="nosaves/Exit" to="nosaves/Exit" method="_on_mouse_exited"]
+[connection signal="pressed" from="nosaves/Exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="nosaves/Credits" to="nosaves/Credits" method="_on_focus_entered"]
+[connection signal="focus_exited" from="nosaves/Credits" to="nosaves/Credits" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="nosaves/Credits" to="nosaves/Credits" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="nosaves/Credits" to="nosaves/Credits" method="_on_mouse_exited"]
+[connection signal="pressed" from="nosaves/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="audio/TextureButton" to="audio" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="audio/TextureButton2" to="audio" method="_on_texture_button_2_pressed"]

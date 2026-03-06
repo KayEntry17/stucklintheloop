@@ -1,0 +1,200 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsxerr4oys8ln"]
+
+[ext_resource type="Texture2D" uid="uid://be7miufnlp4dy" path="res://eldwork/Credits_Sprite3.png" id="1_fxbyn"]
+[ext_resource type="Script" uid="uid://c0avg4gmwa8pr" path="res://_credits.gd" id="1_mxdet"]
+[ext_resource type="AudioStream" uid="uid://be1fq5evivdsq" path="res://Audio/ttost/analgesic/mp3/fields.mp3" id="2_wkt0t"]
+[ext_resource type="Texture2D" uid="uid://ukmiukhvjnj4" path="res://ui/yt17.png" id="3_wkt0t"]
+[ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="4_q7bi3"]
+[ext_resource type="Texture2D" uid="uid://crd6y6dxw35tm" path="res://ui/Лого_студии.png" id="5_eh6c6"]
+
+[sub_resource type="Animation" id="Animation_fxbyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-388, -182)]
+}
+
+[sub_resource type="Animation" id="Animation_wrax4"]
+resource_name = "new_animation"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0733334, 0.693333, 0.973333, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-388, -182), Vector2(-388, -1081.78), Vector2(-388, -1996.91), Vector2(-388, -2382)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.36667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wkt0t"]
+resource_name = "sgs"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxdet"]
+_data = {
+&"RESET": SubResource("Animation_fxbyn"),
+&"new_animation": SubResource("Animation_wrax4"),
+&"sgs": SubResource("Animation_wkt0t")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mxdet")
+mus = ExtResource("2_wkt0t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_mxdet")
+}
+autoplay = "new_animation"
+speed_scale = 0.05
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -388.0
+offset_top = -182.0
+offset_right = 372.0
+offset_bottom = 2614.0
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsSprite9" type="Sprite2D" parent="ColorRect"]
+position = Vector2(243, 436)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(0, 191.715, 348.467, 479.073)
+
+[node name="CreditsSprite11" type="Sprite2D" parent="ColorRect"]
+position = Vector2(429.5, 425.5)
+scale = Vector2(0.0609375, 2.86503)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(0, 1269.24, 640, 163.798)
+
+[node name="CreditsSprite7" type="Sprite2D" parent="ColorRect"]
+position = Vector2(389, 1869.49)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(0, 853.796, 640, 387.524)
+
+[node name="CreditsSprite3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(633, 1936.49)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(508.141, 503.793, 135.287, 152.675)
+
+[node name="CreditsSprite4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(564, 1640.99)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(271.628, 644.289, 245.885, 131.822)
+
+[node name="CreditsSprite5" type="Sprite2D" parent="ColorRect"]
+position = Vector2(607, 268)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(444.939, 196.147, 156.747, 162.811)
+
+[node name="CreditsSprite6" type="Sprite2D" parent="ColorRect"]
+position = Vector2(383, 682)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(335.618, 329.051, 164.329, 220.285)
+
+[node name="Yt17" type="Sprite2D" parent="ColorRect"]
+position = Vector2(558, 477)
+texture = ExtResource("3_wkt0t")
+
+[node name="CreditsSprite10" type="Sprite2D" parent="ColorRect"]
+position = Vector2(389, 2273)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(0, 1241.32, 640, 191.722)
+
+[node name="CreditsSprite8" type="Sprite2D" parent="ColorRect"]
+position = Vector2(389, 99)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 190.491)
+
+[node name="CreditsSprite12" type="Sprite2D" parent="ColorRect"]
+position = Vector2(205, 770.487)
+texture = ExtResource("1_fxbyn")
+region_enabled = true
+region_rect = Rect2(-0.681641, 666.946, 273.523, 42.4432)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 808.487
+offset_right = 682.0
+offset_bottom = 1705.49
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_q7bi3")
+theme_override_font_sizes/font_size = 27
+text = "-Includes used assets that are copyright of Analgesic Productions LLC and are from the Anodyne asset library.
+-UI Futuristic Up Down Scroll by EminYILDIRIM -- https://freesound.org/s/554428/ -- License: Attribution 4.0
+-UI Futuristic Click by EminYILDIRIM -- https://freesound.org/s/554427/ -- License: Attribution 4.0
+-UI_1 Sweet saw(Sytrus,arpegio,multiprocessing,rsmpl).wav by newlocknew -- https://freesound.org/s/515830/ -- License: Attribution 4.0
+-Video Game - Die or Lose Life by AdamWeeden -- https://freesound.org/s/157218/ -- License: Attribution 3.0
+-Acquire by Kenneth_Cooney -- https://freesound.org/s/781199/ -- License: Creative Commons 0
+-retro last level video game loop by emceeciscokid -- https://freesound.org/s/434856/ -- License: Attribution 4.0"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 2071.49
+offset_right = 712.0
+offset_bottom = 2176.49
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_q7bi3")
+theme_override_font_sizes/font_size = 27
+text = "-Melos Han-Tani and Marina Kittaka - thank you for the music, and the amazing games you created!"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 2484.9
+offset_right = 690.0
+offset_bottom = 2625.9
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -3
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("4_q7bi3")
+theme_override_font_sizes/font_size = 18
+text = "This has been a
+ Vision Gallery Studios production, 
+and we hope we see you
+next time."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ЛогоСтудии" type="Sprite2D" parent="ColorRect"]
+position = Vector2(395, 2342)
+texture = ExtResource("5_eh6c6")

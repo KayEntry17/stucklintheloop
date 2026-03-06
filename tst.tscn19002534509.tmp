@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdyuxcp6l1dwy"]
+
+[ext_resource type="Script" uid="uid://clcvvxvrr6ivu" path="res://bapl.gd" id="1_pp7b4"]
+[ext_resource type="Script" uid="uid://dfen671026q36" path="res://area_2d_3.gd" id="2_3pdoc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3pdoc"]
+
+[node name="lvdv" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 57)
+shape = SubResource("CircleShape2D_3pdoc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-53, -1)
+shape = SubResource("CircleShape2D_3pdoc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -41)
+shape = SubResource("CircleShape2D_3pdoc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(51, 0)
+shape = SubResource("CircleShape2D_3pdoc")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("1_pp7b4")
+speed = 100.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(-7, -4, -1, -9, 5, -9, 9, -5, 9, 1, 5, 6, -1, 6, -3, 5, -7, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4.2, 4.2)
+
+[node name="Area2D232" type="Area2D" parent="."]
+position = Vector2(63, 19)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D232"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-34, -17)
+polygon = PackedVector2Array(-1, -8, -2, -2, -4, 2, -5, 2.6, -7, 0, -7, -4, -1.6, -8.47)
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("2_3pdoc")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D3"]
+polygon = PackedVector2Array(-24, -16, -9, -15, -5, -11, -1, -8, 8, -4, 1, 0, -7, 4, -11, 6, -28, 1)

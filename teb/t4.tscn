@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://canjooryh20c4"]
+
+[ext_resource type="Texture2D" uid="uid://dgcu5y760ye76" path="res://ui/Speech1.png" id="1_m7wv7"]
+[ext_resource type="Script" uid="uid://b533aknffpbau" path="res://ui/nine_patch_rect.gd" id="2_vv5nb"]
+[ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="3_spccv"]
+
+[node name="textbox" type="NinePatchRect"]
+process_mode = 3
+top_level = true
+offset_left = -244.09
+offset_top = 39.97
+offset_right = -93.92
+offset_bottom = 130.08
+scale = Vector2(1.00591, 0.98437)
+texture = ExtResource("1_m7wv7")
+patch_margin_left = 9
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 6
+script = ExtResource("2_vv5nb")
+fullsize = Vector2(150.17, 90.11)
+text = "And now, the end is near  And so I face the final curtain.  My friend, I'll say it clear, I'll state my case, of which I'm certain."
+blockinputs = true
+pointpos = Vector2(-244.09, 130.08)
+
+[node name="Label" type="Label" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 147.17
+offset_bottom = 85.11
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_spccv")
+theme_override_font_sizes/font_size = 9
+text = "As to why I'm here? Well, as of recently I've picked up a new hobby - acting  as a guide to anyone I find out there. On this note, I must bid you farewell. Mind the lasers on your way out!"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 1
+visible_characters_behavior = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = -4074.0
+offset_top = -4291.0
+offset_right = 3160.0
+offset_bottom = 4569.0
+color = Color(1, 1, 1, 0)
+
+[node name="active" type="Timer" parent="."]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+
+[node name="death13" type="Timer" parent="."]
+process_mode = 3
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="active" to="." method="_on_active_timeout"]
+[connection signal="timeout" from="death13" to="." method="_on_death_13_timeout"]

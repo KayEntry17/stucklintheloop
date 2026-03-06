@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyv5wmg4n80w6"]
+
+[ext_resource type="Script" uid="uid://cxsao5qbv3acr" path="res://lvhandler.gd" id="1_sy5k4"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_sy5k4")

@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://ffj2b7tk1hyq"]
+
+[ext_resource type="Texture2D" uid="uid://dk12tayp2kp1j" path="res://ui/Cat.png" id="1_hllgm"]
+[ext_resource type="Script" uid="uid://boauooyqq4u7n" path="res://cat.gd" id="2_3envh"]
+[ext_resource type="PackedScene" uid="uid://dxri8govunet8" path="res://teb/textbox.tscn" id="3_xf83t"]
+
+[sub_resource type="Animation" id="Animation_uecg8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(439, 168)]
+}
+
+[sub_resource type="Animation" id="Animation_l6hr3"]
+resource_name = "begin"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(439, 168), Vector2(-271, 168)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"talk"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vwkwr"]
+resource_name = "kms"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-271, 168), Vector2(439, 168)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuxg7"]
+_data = {
+&"RESET": SubResource("Animation_uecg8"),
+&"begin": SubResource("Animation_l6hr3"),
+&"kms": SubResource("Animation_vwkwr")
+}
+
+[node name="Cat" type="Sprite2D"]
+process_mode = 3
+position = Vector2(439, 168)
+texture = ExtResource("1_hllgm")
+script = ExtResource("2_3envh")
+textbox = ExtResource("3_xf83t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_uuxg7")
+}

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjy42anrpci8m"]
+
+[ext_resource type="Script" uid="uid://c42sqx2lcde3a" path="res://levels/boss.gd" id="1_3er13"]
+[ext_resource type="Texture2D" uid="uid://d3nb4o623wexc" path="res://spr/Eye_BOSS.png" id="1_w4dw0"]
+[ext_resource type="Texture2D" uid="uid://c5143h3fdsqep" path="res://spr/Eye_Background_BOSS.png" id="2_3er13"]
+[ext_resource type="Texture2D" uid="uid://rb0hv8l43sw0" path="res://spr/Eye_Ball_BOSS.png" id="3_glam7"]
+[ext_resource type="Script" uid="uid://b6emytnsyr8gv" path="res://laser.gd" id="3_mubhg"]
+[ext_resource type="Script" uid="uid://6n6nnx18ad2" path="res://eye_ball_boss.gd" id="4_mubhg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvv1s"]
+radius = 16.9899
+height = 80.09
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3er13")
+
+[node name="EyeBoss" type="Sprite2D" parent="."]
+texture = ExtResource("1_w4dw0")
+
+[node name="Area2D" type="Area2D" parent="." groups=["bullets"]]
+position = Vector2(0, 4)
+rotation = 1.58015
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("3_mubhg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_wvv1s")
+
+[node name="EyeBackgroundBoss" type="Sprite2D" parent="."]
+clip_children = 1
+texture = ExtResource("2_3er13")
+
+[node name="Node2D" type="Node2D" parent="EyeBackgroundBoss"]
+position = Vector2(0, -1)
+
+[node name="EyeBallBoss" type="Sprite2D" parent="EyeBackgroundBoss/Node2D"]
+position = Vector2(12, 0)
+texture = ExtResource("3_glam7")
+script = ExtResource("4_mubhg")

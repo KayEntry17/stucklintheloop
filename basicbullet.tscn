@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2yywp7h0qkn8"]
+
+[ext_resource type="Texture2D" uid="uid://bix0r46co8171" path="res://spr/Bullet_1.png" id="1_o4eld"]
+[ext_resource type="Script" uid="uid://bagvy7mgycxba" path="res://basicbullet.gd" id="1_y0060"]
+[ext_resource type="Script" uid="uid://b1mg7aj7jrjx1" path="res://ui/area_2d.gd" id="3_t1be0"]
+[ext_resource type="Texture2D" uid="uid://u3b0e4kv53fm" path="res://spr/Warning_sign.png" id="4_bfw0j"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bfw0j"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0060"]
+radius = 17.0294
+
+[sub_resource type="Animation" id="Animation_qhk72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/WarningSign:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/Bullet2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lwkqh"]
+resource_name = "bulapp"
+length = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/Bullet2:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bfw0j"]
+resource_name = "warning"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/WarningSign:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwkqh"]
+_data = {
+&"RESET": SubResource("Animation_qhk72"),
+&"bulapp": SubResource("Animation_lwkqh"),
+&"warning": SubResource("Animation_bfw0j")
+}
+
+[node name="basicbullet" type="Area2D"]
+script = ExtResource("1_y0060")
+speed = 20.0
+dmg = 1
+starttime = 10.0
+looping = 1
+warnp = 5.0
+
+[node name="Bullet1" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_bfw0j")
+
+[node name="Area2D" type="Area2D" parent="." groups=["bullets"]]
+scale = Vector2(1, 1.00418)
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("3_t1be0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -5, -5, 0, 0, 5, 5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y0060")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(32, 32)
+
+[node name="WarningSign" type="Sprite2D" parent="SubViewport"]
+visible = false
+position = Vector2(16, 16)
+texture = ExtResource("4_bfw0j")
+
+[node name="Bullet2" type="Sprite2D" parent="SubViewport"]
+position = Vector2(16, 16)
+texture = ExtResource("1_o4eld")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_lwkqh")
+}
+speed_scale = 0.5

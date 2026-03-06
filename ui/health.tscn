@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6eo6d4f34gm2"]
+
+[ext_resource type="Script" uid="uid://qih44af1swu2" path="res://health.gd" id="1_wtytq"]
+[ext_resource type="PackedScene" uid="uid://bm78jutp3b048" path="res://ui/heart.tscn" id="2_f6684"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("heartc")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtytq")
+heartc = [NodePath("heart"), NodePath("heart2"), NodePath("heart3")]
+healtham = 5
+
+[node name="heart" parent="." instance=ExtResource("2_f6684")]
+position = Vector2(10.5, 0)
+
+[node name="heart2" parent="." instance=ExtResource("2_f6684")]
+position = Vector2(31, 0)
+
+[node name="heart3" parent="." instance=ExtResource("2_f6684")]
+position = Vector2(52, 0)

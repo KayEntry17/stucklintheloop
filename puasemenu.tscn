@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhbbbfbff60s7"]
+
+[ext_resource type="Script" uid="uid://cab78rgmcqtx1" path="res://ui/puasemenu.gd" id="1_e8vhr"]
+[ext_resource type="Texture2D" uid="uid://bdfuh70uy8ogq" path="res://ui/Menu_Button_Gold.png" id="2_upibb"]
+[ext_resource type="Texture2D" uid="uid://dhtpv4xqtgeqs" path="res://ui/Menu_Button_NO_Gold.png" id="3_mwftj"]
+[ext_resource type="Script" uid="uid://7vp5x30jsjm2" path="res://ui/button.gd" id="4_gm7mp"]
+[ext_resource type="Texture2D" uid="uid://ded3ku86bq7ro" path="res://ui/BN_Continue.png" id="5_cypne"]
+[ext_resource type="Texture2D" uid="uid://dt8ulpqk6w15t" path="res://ui/BN_Exit.png" id="6_2tk4r"]
+
+[node name="Puasemenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -688.0
+offset_right = -688.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8vhr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 111.0
+offset_right = -342.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_upibb")
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 9
+patch_margin_bottom = 13
+
+[node name="button" type="TextureButton" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = 126.0
+offset_right = -71.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_mwftj")
+texture_hover = ExtResource("2_upibb")
+texture_focused = ExtResource("2_upibb")
+script = ExtResource("4_gm7mp")
+destination = Vector2(20, 0)
+
+[node name="BnContinue" type="Sprite2D" parent="button"]
+process_mode = 3
+position = Vector2(126, 15)
+texture = ExtResource("5_cypne")
+
+[node name="button2" type="TextureButton" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = 178.0
+offset_right = -71.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_mwftj")
+texture_hover = ExtResource("2_upibb")
+texture_focused = ExtResource("2_upibb")
+script = ExtResource("4_gm7mp")
+destination = Vector2(20, 0)
+
+[node name="BnExit" type="Sprite2D" parent="button2"]
+process_mode = 3
+position = Vector2(116, 14)
+texture = ExtResource("6_2tk4r")
+
+[connection signal="focus_entered" from="button" to="button" method="_on_focus_entered"]
+[connection signal="focus_exited" from="button" to="button" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="button" to="button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="button" to="button" method="_on_mouse_exited"]
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="focus_entered" from="button2" to="button2" method="_on_focus_entered"]
+[connection signal="focus_exited" from="button2" to="button2" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="button2" to="button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="button2" to="button2" method="_on_mouse_exited"]
+[connection signal="pressed" from="button2" to="." method="_on_button_2_pressed"]

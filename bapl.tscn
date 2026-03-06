@@ -1,0 +1,261 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwe8k0jdxrrd1"]
+
+[ext_resource type="Script" uid="uid://clcvvxvrr6ivu" path="res://bapl.gd" id="1_cwg7t"]
+[ext_resource type="Texture2D" uid="uid://n66ijogyei20" path="res://spr/Mobius_trefoil_Death.png" id="2_7fi8n"]
+[ext_resource type="Texture2D" uid="uid://dj8il0eqeksdm" path="res://spr/Mobius_trefoil.png" id="2_brm3x"]
+[ext_resource type="Texture2D" uid="uid://ciscc2j80er3l" path="res://spr/Mobius_trefoil_Invulnerability.png" id="3_35lp7"]
+[ext_resource type="AudioStream" uid="uid://ke4vlcxeikom" path="res://spr/523769__lilmati__retro-hit.wav" id="5_35lp7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cwg7t"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tn17"]
+radius = 11.0
+
+[sub_resource type="Animation" id="Animation_brm3x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MobiusTrefoilInvulnerability:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MobiusTrefoilDeath:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MobiusTrefoilDeath:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MobiusTrefoilInvulnerability:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cwg7t"]
+resource_name = "damg"
+length = 0.51
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MobiusTrefoilDeath:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MobiusTrefoilInvulnerability:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MobiusTrefoilInvulnerability:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_a0c2b"]
+resource_name = "death"
+length = 0.51
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MobiusTrefoilDeath:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../MobiusTrefoilDeath:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MobiusTrefoilInvulnerability:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"csochka"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fi8n"]
+_data = {
+&"RESET": SubResource("Animation_brm3x"),
+&"damg": SubResource("Animation_cwg7t"),
+&"death": SubResource("Animation_a0c2b")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a0c2b"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_35lp7")
+
+[node name="bapl" type="Area2D" groups=["player"]]
+script = ExtResource("1_cwg7t")
+speed = 150.0
+healtime = 1.0
+
+[node name="MobiusTrefoil" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_cwg7t")
+
+[node name="collision" type="Area2D" parent="." groups=["player"]]
+position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
+self_modulate = Color(100, 100, 1, 0)
+position = Vector2(-1, 0)
+scale = Vector2(1.01525, 1)
+polygon = PackedVector2Array(-6, -4, 0, -7, 5, -7, 8, -4, 8, 3, 6, 6, 3, 8, -1, 6, -5, 3, -7, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = -0.00263179
+shape = SubResource("CircleShape2D_1tn17")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(20, 20)
+
+[node name="MobiusTrefoilDeath" type="Sprite2D" parent="SubViewport"]
+visible = false
+texture = ExtResource("2_7fi8n")
+hframes = 14
+
+[node name="MobiusTrefoilInvulnerability" type="Sprite2D" parent="SubViewport"]
+visible = false
+texture = ExtResource("3_35lp7")
+hframes = 3
+
+[node name="MobiusTrefoil2" type="Sprite2D" parent="SubViewport"]
+texture = ExtResource("2_brm3x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/MobiusTrefoil2"]
+libraries = {
+&"": SubResource("AnimationLibrary_7fi8n")
+}
+speed_scale = 0.5
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_a0c2b")
+
+[connection signal="area_entered" from="collision" to="." method="_on_collision_area_entered"]

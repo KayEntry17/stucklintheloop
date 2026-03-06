@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://b430gxobomofs"]
+
+[ext_resource type="Texture2D" uid="uid://bi2sapmrwh3bu" path="res://ui/animation/HiPaint_1754225391376.png" id="1_2tisr"]
+[ext_resource type="Texture2D" uid="uid://dwrfe0acf3pap" path="res://ui/animation/HiPaint_1754225393053.png" id="2_04gwj"]
+[ext_resource type="Texture2D" uid="uid://di4sef3uk75wi" path="res://ui/animation/HiPaint_1754225394490.png" id="3_pgfdd"]
+[ext_resource type="Texture2D" uid="uid://67j20hq3nel0" path="res://ui/animation/HiPaint_1754225396031.png" id="4_s7fe5"]
+[ext_resource type="Texture2D" uid="uid://b4h5sy87s62tp" path="res://ui/animation/HiPaint_1754225397717.png" id="5_2fexp"]
+[ext_resource type="Texture2D" uid="uid://gc03b6qw61q8" path="res://ui/animation/HiPaint_1754225399860.png" id="6_geg41"]
+[ext_resource type="Texture2D" uid="uid://dtkxgee6t425u" path="res://ui/animation/HiPaint_1754225401945.png" id="7_458iu"]
+[ext_resource type="Texture2D" uid="uid://d04yv7axsc5fg" path="res://ui/animation/HiPaint_1754225403706.png" id="8_jlfko"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_syesi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2tisr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_04gwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pgfdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s7fe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2fexp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_geg41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_458iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jlfko")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 184)
+scale = Vector2(0.595, 0.595)
+sprite_frames = SubResource("SpriteFrames_syesi")
+autoplay = "default"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmaw18nptx8lr"]
+
+[ext_resource type="Script" uid="uid://c2hrroj482hd5" path="res://ddc.gd" id="1_kbnms"]
+[ext_resource type="Texture2D" uid="uid://mwc0qik8k7ny" path="res://ui/BN_Digits.png" id="2_hq4mf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kbnms")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hq4mf")
+hframes = 10
+frame = 9
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-14, 0)
+texture = ExtResource("2_hq4mf")
+hframes = 10
+frame = 8

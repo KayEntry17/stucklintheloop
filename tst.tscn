@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdyuxcp6l1dwy"]
+
+[ext_resource type="PackedScene" uid="uid://bwe8k0jdxrrd1" path="res://bapl.tscn" id="1_1tn17"]
+[ext_resource type="PackedScene" uid="uid://dalet35k4axml" path="res://portal_set.tscn" id="2_7i0f8"]
+[ext_resource type="PackedScene" uid="uid://d3mv7mgij6yy2" path="res://portal.tscn" id="3_j1mk6"]
+[ext_resource type="PackedScene" uid="uid://b2yywp7h0qkn8" path="res://basicbullet.tscn" id="4_eep83"]
+[ext_resource type="PackedScene" uid="uid://b6eo6d4f34gm2" path="res://ui/health.tscn" id="5_7i0f8"]
+[ext_resource type="PackedScene" uid="uid://bhbbbfbff60s7" path="res://puasemenu.tscn" id="6_eep83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7i0f8"]
+size = Vector2(496.645, 364.085)
+
+[node name="lvdv" type="Node2D"]
+
+[node name="bapl" parent="." node_paths=PackedStringArray("pausem") instance=ExtResource("1_1tn17")]
+position = Vector2(1, 3)
+scale = Vector2(1.01133, 1)
+healtime = 2.0
+pausem = NodePath("../CanvasLayer/Puasemenu")
+maxhealth = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6, 0)
+
+[node name="box" type="Node2D" parent="."]
+rotation = 0.16057
+
+[node name="portal set" parent="box" instance=ExtResource("2_7i0f8")]
+
+[node name="portal set2" type="Node2D" parent="box"]
+position = Vector2(53, 115)
+rotation = 1.58
+
+[node name="PORTAL" parent="box/portal set2" node_paths=PackedStringArray("portallink") instance=ExtResource("3_j1mk6")]
+position = Vector2(-223.806, -151.477)
+rotation = 1.5708
+size = Vector2(452.385, 34)
+portallink = NodePath("../PORTAL2")
+checkbu = true
+
+[node name="PORTAL2" parent="box/portal set2" node_paths=PackedStringArray("portallink") instance=ExtResource("3_j1mk6")]
+position = Vector2(27.889, -149.936)
+rotation = 1.5708
+size = Vector2(452.385, 34)
+portallink = NodePath("../PORTAL")
+checkbu = true
+offsdir = 0
+
+[node name="Control" parent="." node_paths=PackedStringArray("ch") instance=ExtResource("5_7i0f8")]
+offset_left = -311.0
+offset_top = -168.0
+offset_right = -311.0
+offset_bottom = -168.0
+ch = NodePath("../bapl")
+
+[node name="fu" type="Area2D" parent="."]
+position = Vector2(40, 277)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fu"]
+shape = SubResource("RectangleShape2D_7i0f8")
+
+[node name="basicbullet" parent="." instance=ExtResource("4_eep83")]
+position = Vector2(51, 7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Puasemenu" parent="CanvasLayer" instance=ExtResource("6_eep83")]
+offset_left = -1002.0
+offset_top = -180.0
+offset_right = -1002.0
+offset_bottom = -180.0
+
+[connection signal="area_entered" from="bapl" to="bapl" method="_on_area_entered"]

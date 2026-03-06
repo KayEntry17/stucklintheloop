@@ -1,0 +1,213 @@
+[gd_scene load_steps=29 format=3 uid="uid://dfkuyms1k2fcs"]
+
+[ext_resource type="Texture2D" uid="uid://c23lvdp6fuh8l" path="res://ui/animation/HiPaint_1754210495676.png" id="1_u22h8"]
+[ext_resource type="Texture2D" uid="uid://bqbk72mqho1ep" path="res://ui/animation/HiPaint_1754210497521.png" id="2_xk6aq"]
+[ext_resource type="Texture2D" uid="uid://cca1gwbsumies" path="res://ui/animation/HiPaint_1754210498969.png" id="3_7jbns"]
+[ext_resource type="Texture2D" uid="uid://ckkv1siiyw5rt" path="res://ui/animation/HiPaint_1754210500508.png" id="4_trff5"]
+[ext_resource type="Texture2D" uid="uid://c5wk2fsqc4w0p" path="res://ui/animation/HiPaint_1754210501906.png" id="5_kc2u5"]
+[ext_resource type="Texture2D" uid="uid://yxj8jkm7ujuf" path="res://ui/animation/HiPaint_1754210503451.png" id="6_454m1"]
+[ext_resource type="Texture2D" uid="uid://decafjbrwe746" path="res://ui/animation/HiPaint_1754210505925.png" id="7_on2mc"]
+[ext_resource type="Texture2D" uid="uid://dh22217d63236" path="res://ui/animation/HiPaint_1754210507491.png" id="8_2gbtk"]
+[ext_resource type="Texture2D" uid="uid://c4ukhsj270m5e" path="res://ui/animation/HiPaint_1754210509238.png" id="9_ge3fd"]
+[ext_resource type="Texture2D" uid="uid://bwp4ucvvsyg31" path="res://ui/animation/HiPaint_1754210510580.png" id="10_cmqs0"]
+[ext_resource type="Texture2D" uid="uid://byqergalj3yws" path="res://ui/animation/HiPaint_1754210511947.png" id="11_g73je"]
+[ext_resource type="Texture2D" uid="uid://cm4812nggbphw" path="res://ui/animation/HiPaint_1754210513581.png" id="12_bokfk"]
+[ext_resource type="Texture2D" uid="uid://crd6y6dxw35tm" path="res://ui/Лого_студии.png" id="13_fthgw"]
+[ext_resource type="Texture2D" uid="uid://bi2sapmrwh3bu" path="res://ui/animation/HiPaint_1754225391376.png" id="13_ge3fd"]
+[ext_resource type="Script" uid="uid://dcqm4n0xmdwfu" path="res://ui/an.gd" id="13_wxh0e"]
+[ext_resource type="PackedScene" uid="uid://cvov8f8v2qifo" path="res://ui/mm.tscn" id="14_6gwoo"]
+[ext_resource type="Texture2D" uid="uid://dwrfe0acf3pap" path="res://ui/animation/HiPaint_1754225393053.png" id="14_cmqs0"]
+[ext_resource type="Texture2D" uid="uid://di4sef3uk75wi" path="res://ui/animation/HiPaint_1754225394490.png" id="15_g73je"]
+[ext_resource type="AudioStream" uid="uid://dgbjphd4qhb3d" path="res://Audio/ttost/analgesic/mp3/anodyne_TRAILER_1.mp3" id="15_u22h8"]
+[ext_resource type="Texture2D" uid="uid://67j20hq3nel0" path="res://ui/animation/HiPaint_1754225396031.png" id="16_bokfk"]
+[ext_resource type="Texture2D" uid="uid://b4h5sy87s62tp" path="res://ui/animation/HiPaint_1754225397717.png" id="17_7mr0i"]
+[ext_resource type="Texture2D" uid="uid://gc03b6qw61q8" path="res://ui/animation/HiPaint_1754225399860.png" id="18_e4trm"]
+[ext_resource type="Texture2D" uid="uid://dtkxgee6t425u" path="res://ui/animation/HiPaint_1754225401945.png" id="19_g6eyk"]
+[ext_resource type="Texture2D" uid="uid://d04yv7axsc5fg" path="res://ui/animation/HiPaint_1754225403706.png" id="20_vksai"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge3fd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u22h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xk6aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7jbns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_trff5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kc2u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_454m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_on2mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2gbtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ge3fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cmqs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g73je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bokfk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ge3fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cmqs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g73je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bokfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7mr0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e4trm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_g6eyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vksai")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 1.5
+}]
+
+[sub_resource type="Animation" id="Animation_fthgw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ЛогоСтудии:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.227451, 0.164706, 0.309804, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cmqs0"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ЛогоСтудии:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.73, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.73, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.227451, 0.164706, 0.309804, 1), Color(0.227451, 0.164706, 0.309804, 1), Color(0.227451, 0.164706, 0.309804, 1), Color(0.227, 0.165, 0.31, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HiPaint1754141372283")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g73je"]
+_data = {
+&"RESET": SubResource("Animation_fthgw"),
+&"intro": SubResource("Animation_cmqs0")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HiPaint1754141372283" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(0.595, 0.595)
+sprite_frames = SubResource("SpriteFrames_ge3fd")
+animation = &"new_animation"
+script = ExtResource("13_wxh0e")
+mainm = ExtResource("14_6gwoo")
+mmtheme = ExtResource("15_u22h8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g73je")
+}
+autoplay = "intro"
+speed_scale = 0.3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -192.0
+offset_right = 331.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0.164706, 0.309804, 1)
+
+[node name="ЛогоСтудии" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(9, 3)
+texture = ExtResource("13_fthgw")
+
+[connection signal="animation_finished" from="HiPaint1754141372283" to="HiPaint1754141372283" method="_on_animation_finished"]

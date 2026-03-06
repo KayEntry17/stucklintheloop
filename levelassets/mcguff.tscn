@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpj2gy2eqykww"]
+
+[ext_resource type="Script" uid="uid://dttg7irqq45e5" path="res://collectable.gd" id="1_s7tj2"]
+[ext_resource type="Texture2D" uid="uid://dw0dakyiura81" path="res://spr/MacGuffin.png" id="2_6b1je"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hewny"]
+
+[sub_resource type="Animation" id="Animation_upln6"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15)]
+}
+
+[sub_resource type="Animation" id="Animation_kp1kb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_16u8a"]
+_data = {
+&"RESET": SubResource("Animation_kp1kb"),
+&"new_animation": SubResource("Animation_upln6")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_s7tj2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hewny")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6b1je")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_16u8a")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

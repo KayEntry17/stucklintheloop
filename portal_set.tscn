@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dalet35k4axml"]
+
+[ext_resource type="PackedScene" uid="uid://d3mv7mgij6yy2" path="res://portal.tscn" id="1_lsqsg"]
+
+[node name="portal set" type="Node2D"]
+
+[node name="PORTAL" parent="." node_paths=PackedStringArray("portallink") instance=ExtResource("1_lsqsg")]
+position = Vector2(-220, -143.395)
+rotation = 1.5708
+size = Vector2(294.26, 34)
+portallink = NodePath("../PORTAL2")
+checkbu = true
+
+[node name="PORTAL2" parent="." node_paths=PackedStringArray("portallink") instance=ExtResource("1_lsqsg")]
+position = Vector2(199, -143.395)
+rotation = 1.5708
+size = Vector2(294.26, 34)
+portallink = NodePath("../PORTAL")
+checkbu = true
+offsdir = 0

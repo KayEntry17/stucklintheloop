@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvbvw4h6ntjb4"]
+
+[ext_resource type="Script" uid="uid://dgcen2bsietso" path="res://muscont.gd" id="1_2pesd"]
+[ext_resource type="Texture2D" uid="uid://yxky5t06yje5" path="res://ui/Slider.png" id="1_q7wam"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_q7wam"]
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_npvra"]
+color = Color(0.772549, 0.576471, 0.235294, 1)
+thickness = 3
+
+[node name="HSlider" type="HSlider"]
+offset_top = -1.0
+offset_right = 347.0
+offset_bottom = 16.0
+theme_override_icons/grabber = ExtResource("1_q7wam")
+theme_override_styles/slider = SubResource("StyleBoxLine_q7wam")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_npvra")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("1_2pesd")
+bus_name = "Mus"
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

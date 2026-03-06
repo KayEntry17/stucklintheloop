@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7do4frwkm1gj"]
+
+[ext_resource type="Texture2D" uid="uid://dhtpv4xqtgeqs" path="res://ui/Menu_Button_NO_Gold.png" id="1_gcioa"]
+[ext_resource type="Texture2D" uid="uid://bdfuh70uy8ogq" path="res://ui/Menu_Button_Gold.png" id="2_uan0n"]
+[ext_resource type="Script" uid="uid://7vp5x30jsjm2" path="res://ui/button.gd" id="3_p172q"]
+[ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="4_b44ym"]
+
+[node name="button" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_gcioa")
+texture_hover = ExtResource("2_uan0n")
+texture_focused = ExtResource("2_uan0n")
+script = ExtResource("3_p172q")
+destination = Vector2(20, 0)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 6.0
+offset_right = 121.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.772549, 0.576471, 0.235294, 1)
+theme_override_fonts/font = ExtResource("4_b44ym")
+theme_override_font_sizes/font_size = 18
+text = "Options"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

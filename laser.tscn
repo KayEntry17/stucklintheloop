@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj3d3sf4ykyn1"]
+
+[ext_resource type="Script" uid="uid://b6emytnsyr8gv" path="res://laser.gd" id="1_7vci3"]
+[ext_resource type="Texture2D" uid="uid://db2cib2ux6gh2" path="res://spr/Laser_1f.png" id="1_g6b45"]
+[ext_resource type="Texture2D" uid="uid://dhbqnbwj0ujd7" path="res://spr/Laser_2f.png" id="2_7vci3"]
+[ext_resource type="Texture2D" uid="uid://cuiersdeqpd7c" path="res://spr/Laser_3f.png" id="3_xw5cg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roivt"]
+size = Vector2(20, 410)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5ny2x"]
+frames = 3
+frame_0/texture = ExtResource("1_g6b45")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_7vci3")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_xw5cg")
+frame_2/duration = 0.1
+
+[node name="laser" type="Node2D" groups=["bullets", "knockback"]]
+
+[node name="Area2D" type="Area2D" parent="." groups=["bullets"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_7vci3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_roivt")
+
+[node name="Laser" type="Sprite2D" parent="."]
+texture_repeat = 2
+rotation = 1.5708
+texture = SubResource("AnimatedTexture_5ny2x")
+region_enabled = true
+region_rect = Rect2(0, 0, 173.387, 18)
