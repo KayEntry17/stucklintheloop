@@ -1,7 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://dkfvlh23jilyh"]
+[gd_scene load_steps=23 format=4 uid="uid://dkfvlh23jilyh"]
 
 [ext_resource type="PackedScene" uid="uid://e2oiie4iao3" path="res://trefwork.glb" id="1_kufkk"]
 [ext_resource type="Shader" uid="uid://owoeliaegdml" path="res://2.0/trefwork.gdshader" id="2_e7r0l"]
+[ext_resource type="Script" uid="uid://dq82j6nancofp" path="res://2.0/trefwork.gd" id="2_p1hqh"]
+[ext_resource type="Script" uid="uid://w54d3pwihqb1" path="res://assets/simple_fpsplayer/Player.gd" id="4_rr3do"]
+[ext_resource type="Script" uid="uid://dw0jcj2jvod6h" path="res://assets/simple_fpsplayer/ability_grab.gd" id="5_hvjw1"]
+[ext_resource type="Texture2D" uid="uid://ckcs71ud4wprq" path="res://texture63.png" id="6_hvjw1"]
+[ext_resource type="Script" uid="uid://dv2tresxa3fl2" path="res://2.0/copy.gd" id="6_y30l4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kufkk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,9 +28,14 @@ fog_depth_end = 35.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1hqh"]
 cull_mode = 2
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_hvjw1"]
+viewport_path = NodePath("SubViewport")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p1hqh"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_e7r0l")
+shader_parameter/tex = SubResource("ViewportTexture_hvjw1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vkvg"]
 
@@ -61,30 +71,114 @@ stencil_flags = 1
 stencil_compare = 5
 stencil_reference = 2
 
-[node name="trefwork" instance=ExtResource("1_kufkk")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euj4i"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+[sub_resource type="Environment" id="Environment_y30l4"]
+ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_curve = 0.18301089
+fog_depth_begin = 0.0
+fog_depth_end = 9.1
+
+[sub_resource type="World3D" id="World3D_6x3h1"]
+environment = SubResource("Environment_y30l4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y30l4"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6x3h1"]
+albedo_texture = ExtResource("6_hvjw1")
+uv1_scale = Vector3(50, 50, 50)
+texture_filter = 4
+
+[node name="trefwork" instance=ExtResource("1_kufkk")]
+script = ExtResource("2_p1hqh")
+proportion = 2.477958106994629
+
+[node name="Node3D" type="Node3D" parent="." index="0"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_p1hqh")
 
-[node name="BézierCurve_005" parent="." index="1"]
+[node name="BézierCurve_005" parent="." index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_p1hqh")
 
-[node name="BézierCurve_006" parent="." index="2"]
-"blend_shapes/Key 1" = 1.0
+[node name="BézierCurve_006" parent="." index="3"]
+visible = false
+"blend_shapes/Key 1" = 0.5437776
 surface_material_override/0 = SubResource("ShaderMaterial_p1hqh")
 
-[node name="BézierCurve_007" type="MeshInstance3D" parent="." index="3"]
+[node name="BézierCurve_007" type="MeshInstance3D" parent="." index="4"]
+visible = false
 mesh = SubResource("ArrayMesh_opdg5")
 skeleton = NodePath("")
-"blend_shapes/Key 1" = 1.0
+"blend_shapes/Key 1" = 0.5437776
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." index="4"]
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="5"]
 transform = Transform3D(-0.0036127926, -0.9999935, 0, 0.030765085, -0.00011114859, 0.9995266, -0.9995201, 0.0036110824, 0.030765284, 0.020871162, 3.6941745, 0)
-light_energy = 5.837
+light_energy = 2.93
+light_cull_mask = 4294967287
 shadow_enabled = true
 spot_range = 8.175317
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023343086, -0.4963274, -0.039088726)
 mesh = SubResource("PlaneMesh_xge3u")
 surface_material_override/0 = SubResource("StandardMaterial3D_e7r0l")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028320313, -2.0729725, -0.008301735)
+visible = false
+use_collision = true
+size = Vector3(36.08789, 3.255371, 30.145508)
+
+[node name="Player" type="CharacterBody3D" parent="." index="8"]
+transform = Transform3D(-0.99968505, 0, 0.025095126, 0, 1, 0, -0.025095126, 0, -0.99968505, 0.31575483, 1.3428478, -14.825752)
+disable_mode = 2
+floor_max_angle = 0.802851
+script = ExtResource("4_rr3do")
+
+[node name="body" type="CollisionShape3D" parent="Player" index="0"]
+shape = SubResource("CapsuleShape3D_euj4i")
+
+[node name="rotation_helper" type="Node3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/rotation_helper" index="0"]
+cull_mask = 1048565
+
+[node name="flashlight_player" type="SpotLight3D" parent="Player/rotation_helper/Camera3D" index="0"]
+visible = false
+light_energy = 3.0
+light_bake_mode = 0
+spot_range = 10.0
+spot_angle = 15.0
+spot_angle_attenuation = 1.56917
+
+[node name="ability_grab" type="RayCast3D" parent="Player/rotation_helper/Camera3D" index="1"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("5_hvjw1")
+
+[node name="GrabPosition3D" type="Marker3D" parent="Player/rotation_helper/Camera3D/ability_grab" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="SubViewport" type="SubViewport" parent="." index="9"]
+own_world_3d = true
+world_3d = SubResource("World3D_6x3h1")
+size = Vector2i(2560, 1440)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" index="0" node_paths=PackedStringArray("copy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22612953, 0)
+cull_mask = 1048574
+script = ExtResource("6_y30l4")
+copy = NodePath("../../Player/rotation_helper/Camera3D")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40982246, -7.680038)
+layers = 8
+mesh = SubResource("PlaneMesh_y30l4")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6x3h1")
