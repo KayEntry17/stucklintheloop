@@ -8,6 +8,8 @@ func kms():
 	Pausem.unpause()
 	if catstart:
 		Globavar.manager.start()
+	else:
+		$"../AnimationPlayer".play("end")
 	$AnimationPlayer.play("kms")
 func talk():
 	childplanned=true

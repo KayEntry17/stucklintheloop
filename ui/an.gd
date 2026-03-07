@@ -6,3 +6,6 @@ func _ready() -> void:
 	#TR.change_scene(mainm)
 func _on_animation_finished() -> void:
 	TR.change_scene(mainm)
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		_on_animation_finished()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://13fdltvsxfg"]
+[gd_scene load_steps=35 format=3 uid="uid://13fdltvsxfg"]
 
 [ext_resource type="Shader" uid="uid://d4y5ll00egu5" path="res://ui/bg.gdshader" id="1_mhtl7"]
 [ext_resource type="Texture2D" uid="uid://bln5uhliqome" path="res://ui/Background.png" id="2_41lsf"]
@@ -8,14 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://b6eo6d4f34gm2" path="res://ui/health.tscn" id="5_a4mej"]
 [ext_resource type="PackedScene" uid="uid://bhbbbfbff60s7" path="res://puasemenu.tscn" id="7_l6hr3"]
 [ext_resource type="Script" uid="uid://df5v5clsq5b8n" path="res://levm.gd" id="8_lr4u2"]
-[ext_resource type="PackedScene" uid="uid://ffj2b7tk1hyq" path="res://levelassets/cat.tscn" id="9_a4mej"]
 [ext_resource type="PackedScene" uid="uid://0shyi31hb2a3" path="res://levels/boxl2.tscn" id="9_eowi1"]
 [ext_resource type="AudioStream" uid="uid://de4xkmobo14qe" path="res://Audio/ttost/analgesic/mp3/cliff.mp3" id="9_im375"]
 [ext_resource type="Texture2D" uid="uid://yxky5t06yje5" path="res://ui/Slider.png" id="10_l6hr3"]
 [ext_resource type="Texture2D" uid="uid://co6nelgx44iou" path="res://spr/Forward_slash.png" id="11_12qrt"]
 [ext_resource type="PackedScene" uid="uid://cmaw18nptx8lr" path="res://numberd.tscn" id="11_uecg8"]
 [ext_resource type="Texture2D" uid="uid://dfhax1jb27lfv" path="res://ui/Window_Win.png" id="13_kcjvg"]
-[ext_resource type="PackedScene" uid="uid://2okjlh1sd8uk" path="res://teb/t1.tscn" id="13_xu77f"]
 [ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="14_sy50y"]
 [ext_resource type="Texture2D" uid="uid://berld6od64j80" path="res://ui/Selection Arrow.png" id="15_xu77f"]
 [ext_resource type="Texture2D" uid="uid://ddlrpenvot1ab" path="res://ui/Window_3_2_1_GO.png" id="16_sy50y"]
@@ -29,6 +27,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uecg8"]
 shader = ExtResource("1_mhtl7")
 shader_parameter/speed = 0.035
+shader_parameter/fallspeed = 0.0
+shader_parameter/offset = 0.0
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_uuxg7"]
 thickness = 3
@@ -321,7 +321,6 @@ offset_right = -1002.0
 offset_bottom = -180.0
 
 [node name="ui" type="CanvasLayer" parent="."]
-visible = false
 follow_viewport_enabled = true
 
 [node name="levm" type="NinePatchRect" parent="ui"]
@@ -347,7 +346,6 @@ mmtheme = ExtResource("9_im375")
 mcguffinstotal = 3
 lvlunl = 1
 nextlevel = ExtResource("9_eowi1")
-catstart = true
 
 [node name="health" parent="ui/levm" node_paths=PackedStringArray("ch") instance=ExtResource("5_a4mej")]
 layout_mode = 1
@@ -394,10 +392,6 @@ position = Vector2(579, 22)
 [node name="ForwardSlash" type="Sprite2D" parent="ui/levm/coll"]
 position = Vector2(592, 23)
 texture = ExtResource("11_12qrt")
-
-[node name="Cat" parent="ui" instance=ExtResource("9_a4mej")]
-textbox = ExtResource("13_xu77f")
-catstart = true
 
 [node name="Thee won" type="Node2D" parent="ui"]
 
