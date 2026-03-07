@@ -96,3 +96,4 @@ process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_uuxg7")
 }
+speed_scale = 0.5

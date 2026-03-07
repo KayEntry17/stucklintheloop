@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxri8govunet8"]
+[gd_scene load_steps=6 format=3 uid="uid://dxri8govunet8"]
 
 [ext_resource type="Texture2D" uid="uid://dgcu5y760ye76" path="res://ui/Speech1.png" id="1_o1iw6"]
 [ext_resource type="Script" uid="uid://b533aknffpbau" path="res://ui/nine_patch_rect.gd" id="2_jb2d8"]
 [ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="3_0aadk"]
+[ext_resource type="AudioStream" uid="uid://bkdrldxcrbnlb" path="res://talktest.wav" id="3_jb2d8"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o1iw6"]
+random_pitch = 4.05
+streams_count = 1
+stream_0/stream = ExtResource("3_jb2d8")
 
 [node name="textbox" type="NinePatchRect"]
 process_mode = 3
@@ -11,7 +17,6 @@ offset_left = -244.09
 offset_top = 42.125
 offset_right = -93.92
 offset_bottom = 130.08
-scale = Vector2(1.00591, 0.98437)
 texture = ExtResource("1_o1iw6")
 patch_margin_left = 9
 patch_margin_top = 3
@@ -22,6 +27,10 @@ fullsize = Vector2(150.17, 87.955)
 text = "And now, the end is near  And so I face the final curtain.  My friend, I'll say it clear, I'll state my case, of which I'm certain."
 blockinputs = true
 pointpos = Vector2(-244.09, 130.08)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_o1iw6")
+pitch_scale = 0.01
 
 [node name="Label" type="Label" parent="."]
 process_mode = 3
@@ -42,10 +51,10 @@ visible_characters_behavior = 1
 [node name="ColorRect" type="ColorRect" parent="."]
 process_mode = 3
 layout_mode = 0
-offset_left = -4074.0
-offset_top = -4291.0
-offset_right = 3160.0
-offset_bottom = 4569.0
+offset_left = -4070.851
+offset_top = -4293.228
+offset_right = 3163.149
+offset_bottom = 4566.772
 color = Color(1, 1, 1, 0)
 
 [node name="active" type="Timer" parent="."]

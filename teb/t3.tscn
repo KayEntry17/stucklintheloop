@@ -1,25 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf5r1hah8qlig"]
+[gd_scene load_steps=7 format=3 uid="uid://bf5r1hah8qlig"]
 
 [ext_resource type="Texture2D" uid="uid://dgcu5y760ye76" path="res://ui/Speech1.png" id="1_leeiw"]
 [ext_resource type="Script" uid="uid://b533aknffpbau" path="res://ui/nine_patch_rect.gd" id="2_sl52y"]
 [ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="3_pq4b0"]
-[ext_resource type="PackedScene" uid="uid://canjooryh20c4" path="res://teb/t4.tscn" id="3_sl52y"]
+[ext_resource type="PackedScene" uid="uid://dbi3fnqgvtxcp" path="res://teb/t5.tscn" id="3_sl52y"]
+[ext_resource type="AudioStream" uid="uid://lrdycuqjoysn" path="res://tt2.wav" id="5_pq4b0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8gtxb"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("5_pq4b0")
 
 [node name="textbox" type="NinePatchRect"]
 process_mode = 3
 top_level = true
 offset_left = -244.09
-offset_top = 39.97
-offset_right = -93.92
+offset_top = 68.08
+offset_right = -94.09
 offset_bottom = 130.08
-scale = Vector2(1.00591, 0.98437)
 texture = ExtResource("1_leeiw")
 patch_margin_left = 9
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 6
 script = ExtResource("2_sl52y")
-fullsize = Vector2(150.17, 90.11)
+fullsize = Vector2(150, 62)
 text = "And now, the end is near  And so I face the final curtain.  My friend, I'll say it clear, I'll state my case, of which I'm certain."
 nextbox = ExtResource("3_sl52y")
 blockinputs = true
@@ -31,12 +36,12 @@ process_mode = 3
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 147.17
-offset_bottom = 85.11
+offset_right = 147.0
+offset_bottom = 57.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pq4b0")
 theme_override_font_sizes/font_size = 9
-text = "The only two things which stay consistent are the following: if your HP drops to 0, you lose, and you  control reality with WASD. The rest you will  have to figure out on your own."
+text = "The only two things which stay consistent are the following: if your HP drops to 0, you lose, and you  control reality with WASD. "
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 1
@@ -60,6 +65,10 @@ one_shot = true
 process_mode = 3
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_8gtxb")
+bus = &"SFX"
 
 [connection signal="timeout" from="active" to="." method="_on_active_timeout"]
 [connection signal="timeout" from="death13" to="." method="_on_death_13_timeout"]

@@ -1,32 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://2okjlh1sd8uk"]
+[gd_scene load_steps=7 format=3 uid="uid://dbi3fnqgvtxcp"]
 
-[ext_resource type="Texture2D" uid="uid://dgcu5y760ye76" path="res://ui/Speech1.png" id="1_5m3dj"]
-[ext_resource type="Script" uid="uid://b533aknffpbau" path="res://ui/nine_patch_rect.gd" id="2_kjv1a"]
-[ext_resource type="PackedScene" uid="uid://dbkktojcgffsy" path="res://teb/t2.tscn" id="3_kjv1a"]
-[ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="3_yhknd"]
-[ext_resource type="AudioStream" uid="uid://lrdycuqjoysn" path="res://tt2.wav" id="5_yhknd"]
+[ext_resource type="Texture2D" uid="uid://dgcu5y760ye76" path="res://ui/Speech1.png" id="1_jxlm8"]
+[ext_resource type="Script" uid="uid://b533aknffpbau" path="res://ui/nine_patch_rect.gd" id="2_7cmk6"]
+[ext_resource type="PackedScene" uid="uid://canjooryh20c4" path="res://teb/t4.tscn" id="3_x5e80"]
+[ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="4_mbdia"]
+[ext_resource type="AudioStream" uid="uid://lrdycuqjoysn" path="res://tt2.wav" id="5_7cmk6"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_imev5"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x5e80"]
 random_pitch = 1.2
 streams_count = 1
-stream_0/stream = ExtResource("5_yhknd")
+stream_0/stream = ExtResource("5_7cmk6")
 
 [node name="textbox" type="NinePatchRect"]
 process_mode = 3
 top_level = true
 offset_left = -244.09
-offset_top = 90.08
-offset_right = -94.09
+offset_top = 111.08
+offset_right = -42.089996
 offset_bottom = 130.08
-texture = ExtResource("1_5m3dj")
+texture = ExtResource("1_jxlm8")
 patch_margin_left = 9
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 6
-script = ExtResource("2_kjv1a")
-fullsize = Vector2(150, 40)
+script = ExtResource("2_7cmk6")
+fullsize = Vector2(202, 19)
 text = "And now, the end is near  And so I face the final curtain.  My friend, I'll say it clear, I'll state my case, of which I'm certain."
-nextbox = ExtResource("3_kjv1a")
+nextbox = ExtResource("3_x5e80")
 blockinputs = true
 moreboxes = true
 pointpos = Vector2(-244.09, 130.08)
@@ -36,13 +36,12 @@ process_mode = 3
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 147.0
-offset_bottom = 35.0
+offset_right = 199.0
+offset_bottom = 14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_yhknd")
+theme_override_fonts/font = ExtResource("4_mbdia")
 theme_override_font_sizes/font_size = 9
-text = "Welcome! I believe a short explanation is in order.
-"
+text = "The rest you will  have to figure out on your own."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 1
@@ -68,7 +67,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_imev5")
+stream = SubResource("AudioStreamRandomizer_x5e80")
 bus = &"SFX"
 
 [connection signal="timeout" from="active" to="." method="_on_active_timeout"]

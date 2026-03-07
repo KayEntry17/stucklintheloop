@@ -28,7 +28,7 @@ process_mode = 3
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 126.9
+offset_right = 126.899994
 offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_nd54i")
@@ -50,7 +50,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="active" type="Timer" parent="."]
 process_mode = 3
-wait_time = 2.0
+wait_time = 1.31
 one_shot = true
 
 [node name="death13" type="Timer" parent="."]

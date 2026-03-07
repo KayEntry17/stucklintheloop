@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dppejhwhonvjw" path="res://MainMenu.gd" id="1_guud0"]
 [ext_resource type="Texture2D" uid="uid://bln5uhliqome" path="res://ui/Background.png" id="2_65w35"]
-[ext_resource type="AudioStream" uid="uid://su0w7vuomqgn" path="res://Audio/ttost/analgesic/mp3/overworld.mp3" id="2_dr2ru"]
 [ext_resource type="PackedScene" uid="uid://bdxbj3fps8m1c" path="res://2.0/intro.tscn" id="2_hyep2"]
 [ext_resource type="Shader" uid="uid://d4y5ll00egu5" path="res://ui/bg.gdshader" id="2_t8pm7"]
 [ext_resource type="PackedScene" uid="uid://0shyi31hb2a3" path="res://levels/boxl2.tscn" id="3_tjbc0"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bcwf4uyjr7bfc" path="res://ui/Mobius_trefoil_menu-sheet.png" id="7_yc8wt"]
 [ext_resource type="Texture2D" uid="uid://dpwpkvhu2s7ox" path="res://ui/BN_New_Game.png" id="8_5px2s"]
 [ext_resource type="PackedScene" uid="uid://bq5cuejd2o1ha" path="res://ui/piece_1.tscn" id="8_45rv8"]
+[ext_resource type="AudioStream" uid="uid://5yk1cjk8ggr5" path="res://Audio/ttost/even more shit i made for the internet/oggs/harmony.ogg" id="9_hyep2"]
 [ext_resource type="Texture2D" uid="uid://du7sews3pblm5" path="res://ui/BN_Options.png" id="9_kglod"]
 [ext_resource type="Texture2D" uid="uid://dfnnsx4k0egow" path="res://ui/Piece_2.png" id="9_tm3ph"]
 [ext_resource type="Texture2D" uid="uid://c14fyyy3adroe" path="res://ui/Piece_3.png" id="10_20qfi"]
@@ -128,7 +128,7 @@ grow_vertical = 2
 script = ExtResource("1_guud0")
 levels = Array[PackedScene]([ExtResource("2_hyep2"), ExtResource("3_tjbc0"), ExtResource("4_hpilw"), ExtResource("5_vt4wk"), ExtResource("6_vt4wk"), ExtResource("7_hyep2")])
 credits = ExtResource("3_y1ok7")
-mmtheme = ExtResource("2_dr2ru")
+mmtheme = ExtResource("9_hyep2")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_repeat = 2
