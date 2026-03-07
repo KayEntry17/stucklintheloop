@@ -1,8 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://cvov8f8v2qifo"]
+[gd_scene load_steps=44 format=3 uid="uid://cvov8f8v2qifo"]
 
 [ext_resource type="Script" uid="uid://dppejhwhonvjw" path="res://MainMenu.gd" id="1_guud0"]
 [ext_resource type="Texture2D" uid="uid://bln5uhliqome" path="res://ui/Background.png" id="2_65w35"]
 [ext_resource type="AudioStream" uid="uid://su0w7vuomqgn" path="res://Audio/ttost/analgesic/mp3/overworld.mp3" id="2_dr2ru"]
+[ext_resource type="PackedScene" uid="uid://bdxbj3fps8m1c" path="res://2.0/intro.tscn" id="2_hyep2"]
 [ext_resource type="Shader" uid="uid://d4y5ll00egu5" path="res://ui/bg.gdshader" id="2_t8pm7"]
 [ext_resource type="PackedScene" uid="uid://0shyi31hb2a3" path="res://levels/boxl2.tscn" id="3_tjbc0"]
 [ext_resource type="PackedScene" uid="uid://dsxerr4oys8ln" path="res://credits.tscn" id="3_y1ok7"]
@@ -125,7 +126,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_guud0")
-levels = Array[PackedScene]([ExtResource("20_tjbc0"), ExtResource("3_tjbc0"), ExtResource("4_hpilw"), ExtResource("5_vt4wk"), ExtResource("6_vt4wk"), ExtResource("7_hyep2")])
+levels = Array[PackedScene]([ExtResource("2_hyep2"), ExtResource("3_tjbc0"), ExtResource("4_hpilw"), ExtResource("5_vt4wk"), ExtResource("6_vt4wk"), ExtResource("7_hyep2")])
 credits = ExtResource("3_y1ok7")
 mmtheme = ExtResource("2_dr2ru")
 

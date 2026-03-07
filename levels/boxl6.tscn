@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cxfm4s5ysv1qt"]
+[gd_scene load_steps=34 format=3 uid="uid://cxfm4s5ysv1qt"]
 
 [ext_resource type="Script" uid="uid://dwvyrupccxfnp" path="res://chrcont.gd" id="1_gintf"]
 [ext_resource type="PackedScene" uid="uid://bwe8k0jdxrrd1" path="res://bapl.tscn" id="3_s8urg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://d4y5ll00egu5" path="res://ui/bg.gdshader" id="7_veep4"]
 [ext_resource type="Texture2D" uid="uid://bln5uhliqome" path="res://ui/Background.png" id="8_e07ad"]
 [ext_resource type="AudioStream" uid="uid://dujh185mlgo74" path="res://sfx/434856__emceeciscokid__retro-last-level-video-game-loop.wav" id="9_s8urg"]
+[ext_resource type="PackedScene" uid="uid://xan24jf48cl1" path="res://2.0/ed.tscn" id="10_avfkw"]
 [ext_resource type="Texture2D" uid="uid://bdfuh70uy8ogq" path="res://ui/Menu_Button_Gold.png" id="10_ir8ak"]
 [ext_resource type="PackedScene" uid="uid://k6i1khojcglo" path="res://sfdsf.tscn" id="10_s8urg"]
 [ext_resource type="Script" uid="uid://df5v5clsq5b8n" path="res://levm.gd" id="11_pfrjn"]
@@ -27,6 +28,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wp06j"]
 shader = ExtResource("7_veep4")
 shader_parameter/speed = 0.035
+shader_parameter/fallspeed = 0.0
+shader_parameter/offset = 0.0
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_uuxg7"]
 thickness = 3
@@ -333,7 +336,7 @@ timertot = 30.0
 mmtheme = ExtResource("9_s8urg")
 mcguffinstotal = 6
 lvlunl = 5
-nextlevel = ExtResource("10_s8urg")
+nextlevel = ExtResource("10_avfkw")
 
 [node name="health" parent="ui/levm" node_paths=PackedStringArray("ch") instance=ExtResource("13_ssg3i")]
 layout_mode = 1
@@ -450,6 +453,7 @@ speed_scale = 0.5
 
 [node name="Node2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("21_as5xi")]
 target = NodePath("../bapl")
+gap = 0.3
 bul = ExtResource("22_gintf")
 
 [node name="basicbullet" parent="." instance=ExtResource("6_l31ar")]

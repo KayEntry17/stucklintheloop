@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://be7miufnlp4dy" path="res://eldwork/Credits_Sprite3.png" id="1_fxbyn"]
 [ext_resource type="Script" uid="uid://c0avg4gmwa8pr" path="res://_credits.gd" id="1_mxdet"]
-[ext_resource type="AudioStream" uid="uid://be1fq5evivdsq" path="res://Audio/ttost/analgesic/mp3/fields.mp3" id="2_wkt0t"]
+[ext_resource type="AudioStream" uid="uid://do13hs60xvtrp" path="res://Audio/ttost/even more shit i made for the internet/oggs/a quiet evening, just us.ogg" id="2_4av4j"]
 [ext_resource type="Texture2D" uid="uid://ukmiukhvjnj4" path="res://ui/yt17.png" id="3_wkt0t"]
 [ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="4_q7bi3"]
 [ext_resource type="Texture2D" uid="uid://crd6y6dxw35tm" path="res://ui/Лого_студии.png" id="5_eh6c6"]
@@ -64,7 +64,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_mxdet")
-mus = ExtResource("2_wkt0t")
+mus = ExtResource("2_4av4j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -1,0 +1,172 @@
+[gd_scene load_steps=30 format=3 uid="uid://xan24jf48cl1"]
+
+[ext_resource type="Script" uid="uid://dbovx8yhsgwpx" path="res://node_2d1.gd" id="1_r1lle"]
+[ext_resource type="Texture2D" uid="uid://c23lvdp6fuh8l" path="res://ui/animation/HiPaint_1754210495676.png" id="2_m60fd"]
+[ext_resource type="Texture2D" uid="uid://bqbk72mqho1ep" path="res://ui/animation/HiPaint_1754210497521.png" id="3_2krax"]
+[ext_resource type="Texture2D" uid="uid://cca1gwbsumies" path="res://ui/animation/HiPaint_1754210498969.png" id="4_jm3hc"]
+[ext_resource type="Texture2D" uid="uid://ckkv1siiyw5rt" path="res://ui/animation/HiPaint_1754210500508.png" id="5_qgmot"]
+[ext_resource type="Texture2D" uid="uid://c5wk2fsqc4w0p" path="res://ui/animation/HiPaint_1754210501906.png" id="6_csyw5"]
+[ext_resource type="Texture2D" uid="uid://yxj8jkm7ujuf" path="res://ui/animation/HiPaint_1754210503451.png" id="7_rcc05"]
+[ext_resource type="Texture2D" uid="uid://decafjbrwe746" path="res://ui/animation/HiPaint_1754210505925.png" id="8_tvk6l"]
+[ext_resource type="Texture2D" uid="uid://dh22217d63236" path="res://ui/animation/HiPaint_1754210507491.png" id="9_n23ln"]
+[ext_resource type="Texture2D" uid="uid://c4ukhsj270m5e" path="res://ui/animation/HiPaint_1754210509238.png" id="10_mvfot"]
+[ext_resource type="Texture2D" uid="uid://bwp4ucvvsyg31" path="res://ui/animation/HiPaint_1754210510580.png" id="11_tworm"]
+[ext_resource type="Texture2D" uid="uid://byqergalj3yws" path="res://ui/animation/HiPaint_1754210511947.png" id="12_7su3t"]
+[ext_resource type="Texture2D" uid="uid://cm4812nggbphw" path="res://ui/animation/HiPaint_1754210513581.png" id="13_7f7tg"]
+[ext_resource type="Texture2D" uid="uid://bi2sapmrwh3bu" path="res://ui/animation/HiPaint_1754225391376.png" id="14_ul3dg"]
+[ext_resource type="Texture2D" uid="uid://dwrfe0acf3pap" path="res://ui/animation/HiPaint_1754225393053.png" id="15_2xxjy"]
+[ext_resource type="Texture2D" uid="uid://di4sef3uk75wi" path="res://ui/animation/HiPaint_1754225394490.png" id="16_3igjp"]
+[ext_resource type="Texture2D" uid="uid://67j20hq3nel0" path="res://ui/animation/HiPaint_1754225396031.png" id="17_2jvpx"]
+[ext_resource type="Texture2D" uid="uid://b4h5sy87s62tp" path="res://ui/animation/HiPaint_1754225397717.png" id="18_ruqo7"]
+[ext_resource type="Texture2D" uid="uid://gc03b6qw61q8" path="res://ui/animation/HiPaint_1754225399860.png" id="19_fs01v"]
+[ext_resource type="Texture2D" uid="uid://dtkxgee6t425u" path="res://ui/animation/HiPaint_1754225401945.png" id="20_jjj7v"]
+[ext_resource type="Texture2D" uid="uid://d04yv7axsc5fg" path="res://ui/animation/HiPaint_1754225403706.png" id="21_p5rbu"]
+[ext_resource type="Script" uid="uid://dcqm4n0xmdwfu" path="res://ui/an.gd" id="22_ifekf"]
+[ext_resource type="PackedScene" uid="uid://dsxerr4oys8ln" path="res://credits.tscn" id="23_r1lle"]
+[ext_resource type="AudioStream" uid="uid://do13hs60xvtrp" path="res://Audio/ttost/even more shit i made for the internet/oggs/a quiet evening, just us.ogg" id="24_r1lle"]
+[ext_resource type="FontFile" uid="uid://ccvhjkjjljrhm" path="res://spr/testf.ttf" id="25_m60fd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xudbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m60fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2krax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jm3hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qgmot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_csyw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rcc05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tvk6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n23ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mvfot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tworm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7su3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7f7tg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ul3dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2xxjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3igjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2jvpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ruqo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fs01v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jjj7v")
+}, {
+"duration": 3.0,
+"texture": ExtResource("21_p5rbu")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 0.5
+}]
+
+[sub_resource type="Animation" id="Animation_m60fd"]
+resource_name = "new_animation"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14.2, 15.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2krax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jm3hc"]
+_data = {
+&"RESET": SubResource("Animation_2krax"),
+&"new_animation": SubResource("Animation_m60fd")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r1lle")
+
+[node name="HiPaint1754141372283" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(0.595, 0.595)
+sprite_frames = SubResource("SpriteFrames_xudbl")
+animation = &"new_animation"
+script = ExtResource("22_ifekf")
+mainm = ExtResource("23_r1lle")
+mmtheme = ExtResource("24_r1lle")
+
+[node name="Camera2D" type="Camera2D" parent="HiPaint1754141372283"]
+position = Vector2(1.680672, -1.680672)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 223.0
+offset_top = -172.0
+offset_right = 293.0
+offset_bottom = -59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("25_m60fd")
+theme_override_font_sizes/font_size = 45
+text = "fin.
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jm3hc")
+}
+autoplay = "new_animation"
+
+[connection signal="animation_finished" from="HiPaint1754141372283" to="HiPaint1754141372283" method="_on_animation_finished"]
