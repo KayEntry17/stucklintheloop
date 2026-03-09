@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=4 uid="uid://bq88nlarijo02"]
+[gd_scene load_steps=42 format=4 uid="uid://bq88nlarijo02"]
 
 [ext_resource type="PackedScene" uid="uid://e2oiie4iao3" path="res://trefwork.glb" id="1_liemq"]
 [ext_resource type="Shader" uid="uid://owoeliaegdml" path="res://2.0/trefwork.gdshader" id="3_3bt7l"]
 [ext_resource type="Script" uid="uid://w54d3pwihqb1" path="res://assets/simple_fpsplayer/Player.gd" id="4_bfl0c"]
+[ext_resource type="PackedScene" uid="uid://df2uywkauxqnu" path="res://2.0/New Folder/coumn.glb" id="4_rbloa"]
 [ext_resource type="Script" uid="uid://dw0jcj2jvod6h" path="res://assets/simple_fpsplayer/ability_grab.gd" id="5_7vlc6"]
 [ext_resource type="Environment" uid="uid://b0qryny30onnl" path="res://2.0/range.tres" id="6_3bt7l"]
 [ext_resource type="Texture2D" uid="uid://ckcs71ud4wprq" path="res://texture63.png" id="6_qjxmu"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dv2tresxa3fl2" path="res://2.0/copy.gd" id="7_qjxmu"]
 [ext_resource type="PackedScene" uid="uid://bjav1il1adsea" path="res://2.0/range.tscn" id="9_3bt7l"]
 [ext_resource type="Material" uid="uid://bvijbovoo5h0e" path="res://2.0/beam.tres" id="10_bfl0c"]
+[ext_resource type="Texture2D" uid="uid://65wekpn8c0lw" path="res://range_grass floor.png" id="11_7vlc6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euj4i"]
 
@@ -101,6 +103,9 @@ fog_density = 1.0
 fog_depth_begin = 0.0
 fog_depth_end = 20.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbloa"]
+size = Vector3(2.37, 2.997, 1.855)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1hqh"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hvjw1"]
@@ -148,7 +153,7 @@ size = Vector2(100, 100)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbloa"]
 albedo_texture = ExtResource("6_qjxmu")
 uv1_scale = Vector3(150, 150, 150)
-texture_filter = 2
+texture_filter = 4
 
 [sub_resource type="World3D" id="World3D_3bt7l"]
 environment = ExtResource("6_3bt7l")
@@ -217,6 +222,14 @@ top_radius = 0.0
 bottom_radius = 3.0
 height = 30.0
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_rbloa"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exsuw"]
+albedo_texture = ExtResource("11_7vlc6")
+uv1_scale = Vector3(100, 100, 100)
+texture_filter = 4
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3bt7l"]
 height = 3.0
 radius = 48.0
@@ -227,7 +240,7 @@ size = Vector3(75, 3, 1)
 [node name="trefwork" instance=ExtResource("1_liemq")]
 
 [node name="Player" type="CharacterBody3D" parent="." index="0"]
-transform = Transform3D(-0.99968505, 0, 0.025095126, 0, 1, 0, -0.025095126, 0, -0.99968505, 0.9504142, 0, -14.321182)
+transform = Transform3D(-0.99968505, 0, 0.025095126, 0, 1, 0, -0.025095126, 0, -0.99968505, 0, 0, -13.039842)
 disable_mode = 2
 floor_max_angle = 0.802851
 script = ExtResource("4_bfl0c")
@@ -241,6 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="Camera3D" type="Camera3D" parent="Player/rotation_helper" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
 cull_mask = 1048565
+current = true
 
 [node name="flashlight_player" type="SpotLight3D" parent="Player/rotation_helper/Camera3D" index="0"]
 visible = false
@@ -265,36 +279,43 @@ mesh = SubResource("SphereMesh_bfl0c")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
 environment = SubResource("Environment_qjxmu")
 
-[node name="BézierCurve_005" parent="." index="3"]
-transform = Transform3D(0.7333977, -0.6797998, 0, 0.6797998, 0.7333977, 0, 0, 0, 1, -0.10662152, 2.485426, -0.3475491)
+[node name="coumn" parent="." index="3" instance=ExtResource("4_rbloa")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.107, 2.018, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coumn" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coumn/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.6746826, 0)
+shape = SubResource("BoxShape3D_rbloa")
+
+[node name="BézierCurve_005" parent="." index="4"]
+transform = Transform3D(0.7333977, -0.6797998, 0, 0.6797998, 0.7333977, 0, 0, 0, 1, -0.10662152, 2.4313917, 0)
 visible = false
-"blend_shapes/BézierCurve.006" = 1.0
 surface_material_override/0 = SubResource("StandardMaterial3D_p1hqh")
 
-[node name="BézierCurve_006" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8062233, -0.37497318)
+[node name="BézierCurve_006" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7521892, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_p1hqh")
 
-[node name="BézierCurve_007" type="MeshInstance3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8062233, -0.37497318)
+[node name="BézierCurve_007" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7521892, 0)
 mesh = SubResource("ArrayMesh_opdg5")
 skeleton = NodePath("")
 "blend_shapes/Key 1" = 0.0
 surface_material_override/0 = SubResource("StandardMaterial3D_qjxmu")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." index="6"]
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028320313, -2.0729725, -8.083008)
 visible = false
 use_collision = true
 size = Vector3(36.08789, 3.255371, 87.59375)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40982246, -7.680038)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="8"]
 layers = 9
 mesh = SubResource("PlaneMesh_y30l4")
 surface_material_override/0 = SubResource("StandardMaterial3D_rbloa")
 
-[node name="SubViewport" type="SubViewport" parent="." index="8"]
+[node name="SubViewport" type="SubViewport" parent="." index="9"]
 own_world_3d = true
 world_3d = SubResource("World3D_3bt7l")
 size = Vector2i(2560, 1440)
@@ -308,11 +329,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jisst")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" index="1" node_paths=PackedStringArray("copy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46268028, 0.20520186, 0.78196836)
+current = true
 script = ExtResource("7_qjxmu")
 copy = NodePath("../../Player/rotation_helper/Camera3D")
 
 [node name="BézierCurve_007" type="MeshInstance3D" parent="SubViewport" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8062233, -0.37497318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7521892, 0)
 mesh = SubResource("ArrayMesh_exsuw")
 skeleton = NodePath("")
 "blend_shapes/Key 1" = 0.0
@@ -320,7 +342,7 @@ skeleton = NodePath("")
 [node name="Node3D" type="Node3D" parent="SubViewport" index="3"]
 
 [node name="BézierCurve_005" type="MeshInstance3D" parent="SubViewport" index="4"]
-transform = Transform3D(0.7333977, -0.6797998, 0, 0.6797998, 0.7333977, 0, 0, 0, 1, -0.10662152, 2.485426, -0.3475491)
+transform = Transform3D(0.7333977, -0.6797998, 0, 0.6797998, 0.7333977, 0, 0, 0, 1, -0.10662152, 2.4313917, 0)
 visible = false
 mesh = SubResource("ArrayMesh_w4vgp")
 skeleton = NodePath("")
@@ -339,11 +361,18 @@ spot_range = 29.945
 spot_angle = 5.87
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/SpotLight3D2" index="0"]
-transform = Transform3D(-0.0036127926, 0.030765085, -0.9995201, -0.9999935, -0.00011114859, 0.0036110824, 1.4551915e-11, 0.9995267, 0.03076529, 0, 0, -15)
+transform = Transform3D(-0.0036127926, 0.030765085, -0.9995201, -0.9999935, -0.00011114859, 0.0036110824, 3.6379788e-11, 0.9995267, 0.030765295, 0, 0, -14.897)
 mesh = SubResource("CylinderMesh_7vlc6")
 skeleton = NodePath("../Cylinder_003")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport" index="7"]
+mesh = SubResource("PlaneMesh_rbloa")
+surface_material_override/0 = SubResource("StandardMaterial3D_exsuw")
+
+[node name="coumn" parent="SubViewport" index="8" instance=ExtResource("4_rbloa")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.10662152, 2.018011, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="10"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)

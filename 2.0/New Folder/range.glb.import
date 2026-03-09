@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b01ynn8ml5p2f"
+uid="uid://botk5o4kbyffe"
 path="res://.godot/imported/range.glb-215f78ba8fee6e6b8cdc0479e7d33088.scn"
 
 [deps]
@@ -58,11 +58,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://2.0/New Folder/materials/Material.004.tres",
 "use_external/path": "uid://dofxuicfklts1"
-},
-"Material.005": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://2.0/New Folder/materials/Material.005.tres",
-"use_external/path": "uid://v0p50agjy1gc"
 },
 "Material.006": {
 "use_external/enabled": true,

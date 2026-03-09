@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://gghqjrg7q1xv"]
+
+[ext_resource type="Texture2D" uid="uid://b7qnf0kslmnqs" path="res://2.0/New Folder/coumn_columngr.png" id="1_8twof"]
+
+[resource]
+resource_name = "column"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_8twof")
+texture_filter = 2

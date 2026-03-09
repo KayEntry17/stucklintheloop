@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjav1il1adsea"]
+[gd_scene load_steps=2 format=3 uid="uid://bjav1il1adsea"]
 
-[ext_resource type="PackedScene" uid="uid://b01ynn8ml5p2f" path="res://2.0/New Folder/range.glb" id="1_6tfcl"]
-[ext_resource type="Material" uid="uid://bvijbovoo5h0e" path="res://2.0/beam.tres" id="2_g5jox"]
+[ext_resource type="PackedScene" uid="uid://botk5o4kbyffe" path="res://2.0/New Folder/range.glb" id="1_6tfcl"]
 
 [node name="range" instance=ExtResource("1_6tfcl")]
 
-[node name="Plane" parent="." index="4"]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -0.013879776, -0.08302832, -0.17866707)
-
-[node name="Cylinder_002" parent="." index="7"]
+[node name="Cylinder_002" parent="." index="6"]
 visible = false
 
-[node name="Cylinder_003" parent="." index="30"]
+[node name="tower" parent="." index="7"]
 visible = false
-surface_material_override/0 = ExtResource("2_g5jox")
+
+[node name="tower_001" parent="." index="8"]
+visible = false
+
+[node name="Cube" parent="." index="29"]
+transform = Transform3D(0.9598927, 0, 0.28036767, 0, 54.85409, 0, -0.28036767, 0, 0.9598927, -129.4248, 113.83299, -46.894062)
+
+[node name="Cube_002" parent="." index="31"]
+visible = false
