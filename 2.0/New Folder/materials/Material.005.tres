@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://v0p50agjy1gc"]
+
+[ext_resource type="Texture2D" uid="uid://cgc7qv1sbq3lq" path="res://2.0/New Folder/range_grass floor.png" id="1_s4020"]
+
+[resource]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_texture = ExtResource("1_s4020")
+roughness = 0.5
+texture_filter = 2

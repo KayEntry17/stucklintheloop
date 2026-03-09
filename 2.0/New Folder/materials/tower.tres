@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8kv2sd0m4xul"]
+
+[ext_resource type="Texture2D" uid="uid://cfp6sksys6sve" path="res://2.0/New Folder/range_tower.png" id="1_6a710"]
+
+[resource]
+resource_name = "tower"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+albedo_texture = ExtResource("1_6a710")
+texture_filter = 2
+texture_repeat = false

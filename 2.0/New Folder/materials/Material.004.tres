@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dofxuicfklts1"]
+
+[ext_resource type="Texture2D" uid="uid://bwrstws833q5g" path="res://2.0/New Folder/range_watertowerside.png" id="1_ovd1d"]
+
+[resource]
+resource_name = "Material.004"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_ovd1d")
+roughness = 0.5
+texture_filter = 2

@@ -1,0 +1,100 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b01ynn8ml5p2f"
+path="res://.godot/imported/range.glb-215f78ba8fee6e6b8cdc0479e7d33088.scn"
+
+[deps]
+
+source_file="res://2.0/New Folder/range.glb"
+dest_files=["res://.godot/imported/range.glb-215f78ba8fee6e6b8cdc0479e7d33088.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.001.tres",
+"use_external/path": "uid://c08in53qgqfvl"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.002.tres",
+"use_external/path": "uid://8eikt4cm71vo"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.003.tres",
+"use_external/path": "uid://dt183u6pkyw44"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.004.tres",
+"use_external/path": "uid://dofxuicfklts1"
+},
+"Material.005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.005.tres",
+"use_external/path": "uid://v0p50agjy1gc"
+},
+"Material.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.006.tres",
+"use_external/path": "uid://ckfb4udq8r7bg"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.007.tres",
+"use_external/path": "uid://bay6i7vemj4dx"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.008.tres",
+"use_external/path": "uid://c7vpr0odiqnoh"
+},
+"Material.009": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.009.tres",
+"use_external/path": "uid://dujjestsak34b"
+},
+"Material.010": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/Material.010.tres",
+"use_external/path": "uid://jwrntl20743c"
+},
+"tower": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://2.0/New Folder/materials/tower.tres",
+"use_external/path": "uid://b8kv2sd0m4xul"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

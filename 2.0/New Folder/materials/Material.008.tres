@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7vpr0odiqnoh"]
+
+[ext_resource type="Texture2D" uid="uid://bw3t5y50t4d2b" path="res://2.0/New Folder/range_mountain range.png" id="1_8yiwg"]
+
+[resource]
+resource_name = "Material.008"
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_8yiwg")
+texture_filter = 2

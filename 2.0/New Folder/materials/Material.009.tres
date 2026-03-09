@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dujjestsak34b"]
+
+[ext_resource type="Texture2D" uid="uid://d1gjbq41wu6ym" path="res://2.0/New Folder/range_1mount.png" id="1_6pwwy"]
+
+[resource]
+resource_name = "Material.009"
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_6pwwy")
+texture_filter = 2

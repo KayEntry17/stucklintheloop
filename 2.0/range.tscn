@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjav1il1adsea"]
+
+[ext_resource type="PackedScene" uid="uid://b01ynn8ml5p2f" path="res://2.0/New Folder/range.glb" id="1_6tfcl"]
+[ext_resource type="Material" uid="uid://bvijbovoo5h0e" path="res://2.0/beam.tres" id="2_g5jox"]
+
+[node name="range" instance=ExtResource("1_6tfcl")]
+
+[node name="Plane" parent="." index="4"]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -0.013879776, -0.08302832, -0.17866707)
+
+[node name="Cylinder_002" parent="." index="7"]
+visible = false
+
+[node name="Cylinder_003" parent="." index="30"]
+visible = false
+surface_material_override/0 = ExtResource("2_g5jox")

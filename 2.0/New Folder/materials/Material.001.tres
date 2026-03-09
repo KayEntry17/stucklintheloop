@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c08in53qgqfvl"]
+
+[ext_resource type="Texture2D" uid="uid://c06cq8qcvgs88" path="res://2.0/New Folder/range_night sky.png" id="1_s8xrr"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_texture = ExtResource("1_s8xrr")
+texture_filter = 2

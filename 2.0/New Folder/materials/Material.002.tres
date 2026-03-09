@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://8eikt4cm71vo"]
+
+[ext_resource type="Texture2D" uid="uid://buaur5vr5svaj" path="res://2.0/New Folder/range_SEAMLESSSIDEWALL.png" id="1_xbkcx"]
+
+[resource]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_xbkcx")
+roughness = 0.5
+texture_filter = 2
